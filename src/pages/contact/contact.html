@@ -6,11 +6,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content> 
   <ion-list>
-    <ion-list-header>Follow me on facebook or instagram</ion-list-header>
-   <p>For my instagram:raccoongamer49</p>
-   <p>For my Facebook: Derek Cruz </p>
-   <p> For my email: derekcruz@yahoo.com</p>
+  First form 
+    <form (ngSubmit)="sendInfo()">
+      <ion-item>
+        <ion-label color ="primary" stacked >name </ion-label>
+        <ion-input type="text" [(ngModel)]="info" name="Name"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary"stacked>email</ion-label>
+        <ion-textarea [(ngModel)]="info" name="Email "></ion-textarea>
+      </ion-item>
+      <ion-label color="primary"stacked>content</ion-label>
+      <ion-textarea [(ngModel)] ="info" name="Content"></ion-textarea>
+      <button ion-button type="submit" round>Add info</button>
+    </form>
+    second form 
+     <form [formGroup]="todo" (ngSubmit)="logForm()">
+        <ion-item>
+          <ion-label>name</ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>email</ion-label>
+          <ion-textarea formControlName="email"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label>content</ion-label>
+          <ion-textarea type="text" formControlName="content"></ion-textarea>
+        </ion-item>
+        <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+      </form>
+    
+  
+
   </ion-list>
 </ion-content>
