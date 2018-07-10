@@ -6,14 +6,17 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'about.html'
 })
 export class AboutPage {
- searchQuery:string ="";
- item:string[];
-
+ searchQuery:string ='';
+ item:any[];
+ 
   constructor(public navCtrl: NavController ) {
         this.initializeItems();
    }
 initializeItems(){
-  this.item = ['Apple','banana','Oranges',];
+  this.item = ['Derek Cruz',
+  'Jonathan Estrada',
+  'Luis Cortez',
+  'Luis Cristobal'] ;
   }
 
 getItems(ev:any){
